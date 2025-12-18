@@ -1,0 +1,121 @@
+
+import React, { useState, useEffect } from 'react';
+import { Menu, X } from 'lucide-react';
+
+const Header: React.FC = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    setIsMobileMenuOpen(false);
+
+    if (href === '#') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    const targetId = href.replace('#', '');
+    const element = document.getElementById(targetId);
+    
+    if (element) {
+      const headerOffset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const navLinks = [
+    { name: 'Inicio', href: '#' },
+    { name: 'Características', href: '#features' },
+    { name: 'Privacidad', href: '#privacy' },
+    { name: 'Descargar', href: '#download' },
+  ];
+
+  // Nuevo icono solicitado por el usuario
+  const appIcon = "https://www.dropbox.com/scl/fi/h8fxjyge9nqnle2jbnj7s/turbo.png?rlkey=nnhw7iy2blbssn7wyxasrvp7t&st=7njbu0cq&raw=1";
+
+  return (
+    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${isScrolled ? 'glass-effect py-3 shadow-2xl' : 'bg-transparent py-6'}`}>
+      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+        <div className="flex items-center gap-3 group cursor-pointer" onClick={(e) => handleNavClick(e as any, '#')}>
+          <div className="w-12 h-12 rounded-2xl overflow-hidden border border-white/10 shadow-lg group-hover:scale-110 transition-transform duration-300">
+            <img src={appIcon} alt="TurboMX VPN Logo" className="w-full h-full object-cover" />
+          </div>
+          <span className="text-2xl font-black tracking-tighter">
+            Turbo<span className="text-sky-500">MX</span> <span className="text-white/80 font-bold">VPN</span>
+          </span>
+        </div>
+
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex items-center gap-8">
+          {navLinks.map((link) => (
+            <a 
+              key={link.name} 
+              href={link.href} 
+              onClick={(e) => handleNavClick(e, link.href)}
+              className="text-sm font-bold text-slate-400 hover:text-white transition-colors relative group"
+            >
+              {link.name}
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
+            </a>
+          ))}
+          <a 
+            href="https://play.google.com/store/apps/details?id=turbo.mx.anuncios"
+            target="_blank"
+            rel="noopener noreferrer" 
+            className="bg-sky-600 hover:bg-sky-500 text-white px-6 py-2.5 rounded-xl text-sm font-bold transition-all shadow-lg shadow-sky-600/30 hover:-translate-y-0.5"
+          >
+            Instalar Gratis
+          </a>
+        </nav>
+
+        {/* Mobile Toggle */}
+        <button className="md:hidden text-white p-2 rounded-lg hover:bg-white/5" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+          {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden absolute top-full left-0 w-full glass-effect border-b border-white/10 py-8 px-6 animate-in slide-in-from-top duration-300">
+          <div className="flex flex-col gap-6">
+            {navLinks.map((link) => (
+              <a 
+                key={link.name} 
+                href={link.href} 
+                className="text-xl font-bold text-slate-300 hover:text-sky-400 transition-colors"
+                onClick={(e) => handleNavClick(e, link.href)}
+              >
+                {link.name}
+              </a>
+            ))}
+            <a 
+              href="https://play.google.com/store/apps/details?id=turbo.mx.anuncios"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-sky-600 text-white py-4 rounded-2xl text-center font-bold shadow-xl"
+            >
+              Descargar App
+            </a>
+          </div>
+        </div>
+      )}
+    </header>
+  );
+};
+
+export default Header;
