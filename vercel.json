@@ -8,7 +8,7 @@
       "headers": [
         {
           "key": "Content-Type",
-          "value": "text/plain"
+          "value": "text/plain; charset=utf-8"
         },
         {
           "key": "Cache-Control",
@@ -23,7 +23,7 @@
       "destination": "/ads.txt"
     },
     {
-      "source": "/(.*)",
+      "source": "/((?!ads.txt|robots.txt|favicon.ico).*)",
       "destination": "/index.html"
     }
   ]
