@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
@@ -40,12 +39,11 @@ const Header: React.FC = () => {
 
   const navLinks = [
     { name: 'Inicio', href: '#' },
-    { name: 'Características', href: '#features' },
+    { name: 'FAQ', href: '#faq' },
     { name: 'Privacidad', href: '#privacy' },
-    { name: 'Descargar', href: '#download' },
+    { name: 'Contacto', href: '#contact' },
   ];
 
-  // Nuevo icono solicitado por el usuario
   const appIcon = "https://www.dropbox.com/scl/fi/h8fxjyge9nqnle2jbnj7s/turbo.png?rlkey=nnhw7iy2blbssn7wyxasrvp7t&st=7njbu0cq&raw=1";
 
   return (
@@ -60,7 +58,6 @@ const Header: React.FC = () => {
           </span>
         </div>
 
-        {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a 
@@ -83,13 +80,11 @@ const Header: React.FC = () => {
           </a>
         </nav>
 
-        {/* Mobile Toggle */}
         <button className="md:hidden text-white p-2 rounded-lg hover:bg-white/5" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
           {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 w-full glass-effect border-b border-white/10 py-8 px-6 animate-in slide-in-from-top duration-300">
           <div className="flex flex-col gap-6">

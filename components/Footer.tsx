@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Youtube, MessageCircle, Play, ArrowUp } from 'lucide-react';
 
@@ -31,7 +30,6 @@ const Footer: React.FC = () => {
     }
   };
 
-  // Nuevo icono solicitado por el usuario
   const appIcon = "https://www.dropbox.com/scl/fi/h8fxjyge9nqnle2jbnj7s/turbo.png?rlkey=nnhw7iy2blbssn7wyxasrvp7t&st=7njbu0cq&raw=1";
 
   return (
@@ -64,58 +62,54 @@ const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h4 className="font-black text-xl mb-8 uppercase tracking-widest text-slate-400 text-sm">Navegación</h4>
+            <h4 className="font-black text-xl mb-8 uppercase tracking-widest text-slate-400 text-sm">Información Legal</h4>
             <ul className="space-y-5 text-slate-500 font-bold">
-              <li>
-                <a 
-                  href="#" 
-                  onClick={(e) => handleNavClick(e, '#')}
-                  className="hover:text-white transition-colors"
-                >
-                  Inicio
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="#features" 
-                  onClick={(e) => handleNavClick(e, '#features')}
-                  className="hover:text-white transition-colors"
-                >
-                  Características
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="#download" 
-                  onClick={(e) => handleNavClick(e, '#download')}
-                  className="hover:text-white transition-colors"
-                >
-                  Descargar
-                </a>
-              </li>
               <li>
                 <a 
                   href="#privacy" 
                   onClick={(e) => handleNavClick(e, '#privacy')}
+                  className="hover:text-white transition-colors"
+                >
+                  Política de Privacidad
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="#terms" 
+                  onClick={(e) => handleNavClick(e, '#terms')}
+                  className="hover:text-white transition-colors"
+                >
+                  Términos de Servicio
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="#faq" 
+                  onClick={(e) => handleNavClick(e, '#faq')}
+                  className="hover:text-white transition-colors"
+                >
+                  FAQ
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="#contact" 
+                  onClick={(e) => handleNavClick(e, '#contact')}
                   className="hover:text-sky-500 transition-colors"
                 >
-                  Privacidad
+                  Soporte
                 </a>
               </li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-black text-xl mb-8 uppercase tracking-widest text-slate-400 text-sm">Comunidad</h4>
-            <p className="text-slate-500 mb-6 leading-relaxed">Únete a nuestra creciente comunidad en Telegram para novedades y soporte directo.</p>
-            <a 
-              href="https://t.me/internetGratisMexico" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-sky-600/10 text-sky-400 px-6 py-3 rounded-xl font-black hover:bg-sky-600/20 transition-all"
-            >
-              Ir a Telegram
-            </a>
+            <h4 className="font-black text-xl mb-8 uppercase tracking-widest text-slate-400 text-sm">Oficial</h4>
+            <p className="text-slate-500 mb-6 leading-relaxed">TurboMX VPN es un proyecto independiente enfocado en la ciberseguridad móvil.</p>
+            <div className="bg-white/5 p-4 rounded-xl border border-white/5">
+              <span className="text-xs text-slate-500 block mb-1">Versión App</span>
+              <span className="text-white font-bold">1.2.5 (Última versión)</span>
+            </div>
           </div>
         </div>
 

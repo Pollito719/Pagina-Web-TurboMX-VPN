@@ -1,11 +1,14 @@
-
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { MessageCircle, Play } from 'lucide-react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Features from './components/Features';
 import PrivacyPolicy from './components/PrivacyPolicy';
+import TermsOfService from './components/TermsOfService';
+import FAQ from './components/FAQ';
+import Contact from './components/Contact';
 import Footer from './components/Footer';
+import CookieBanner from './components/CookieBanner';
 
 const App: React.FC = () => {
   return (
@@ -17,10 +20,8 @@ const App: React.FC = () => {
         
         <Features />
 
-        {/* Privacy Policy Section Integrated into Main Page */}
-        <PrivacyPolicy />
+        <FAQ />
 
-        {/* Call to Action Section */}
         <section id="download" className="py-20 px-6">
           <div className="max-w-5xl mx-auto glass-effect rounded-3xl p-10 md:p-16 text-center border border-sky-500/20 shadow-2xl shadow-sky-500/5">
             <h2 className="text-3xl md:text-5xl font-extrabold mb-6">¿Listo para navegar sin límites?</h2>
@@ -51,9 +52,17 @@ const App: React.FC = () => {
             </div>
           </div>
         </section>
+
+        <Contact />
+
+        <div id="legal" className="space-y-0">
+          <PrivacyPolicy />
+          <TermsOfService />
+        </div>
       </main>
 
       <Footer />
+      <CookieBanner />
     </div>
   );
 };
