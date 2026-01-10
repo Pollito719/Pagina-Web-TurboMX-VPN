@@ -39,6 +39,7 @@ const Header: React.FC = () => {
 
   const navLinks = [
     { name: 'Inicio', href: '#' },
+    { name: 'Nosotros', href: '#about' },
     { name: 'FAQ', href: '#faq' },
     { name: 'Privacidad', href: '#privacy' },
     { name: 'Contacto', href: '#contact' },

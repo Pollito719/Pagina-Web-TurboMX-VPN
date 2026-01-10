@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { MessageCircle, Play } from 'lucide-react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Features from './components/Features';
+import About from './components/About';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsOfService from './components/TermsOfService';
 import FAQ from './components/FAQ';
@@ -18,15 +19,17 @@ const App: React.FC = () => {
       <main>
         <Hero />
         
+        <About />
+        
         <Features />
 
         <FAQ />
 
         <section id="download" className="py-20 px-6">
           <div className="max-w-5xl mx-auto glass-effect rounded-3xl p-10 md:p-16 text-center border border-sky-500/20 shadow-2xl shadow-sky-500/5">
-            <h2 className="text-3xl md:text-5xl font-extrabold mb-6">¿Listo para navegar sin límites?</h2>
+            <h2 className="text-3xl md:text-5xl font-extrabold mb-6">¿Listo para navegar de forma segura?</h2>
             <p className="text-slate-400 text-lg mb-10 max-w-2xl mx-auto">
-              Únete a miles de usuarios que ya disfrutan de una conexión segura, privada y extremadamente rápida con TurboMX VPN.
+              Únete a miles de usuarios que ya disfrutan de una conexión cifrada, privada y extremadamente rápida con TurboMX VPN.
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -37,7 +40,7 @@ const App: React.FC = () => {
                 className="w-full sm:w-auto flex items-center justify-center gap-3 bg-white text-black hover:bg-slate-200 px-8 py-4 rounded-xl font-bold transition-all transform hover:scale-105"
               >
                 <Play className="w-5 h-5 fill-current" />
-                Play Store
+                Google Play Store
               </a>
               
               <a 
@@ -47,7 +50,7 @@ const App: React.FC = () => {
                 className="w-full sm:w-auto flex items-center justify-center gap-3 bg-sky-600 hover:bg-sky-500 px-8 py-4 rounded-xl font-bold transition-all transform hover:scale-105"
               >
                 <MessageCircle className="w-5 h-5" />
-                Telegram
+                Comunidad Oficial
               </a>
             </div>
           </div>
