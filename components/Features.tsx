@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Zap, Shield, Globe, Lock, Cpu, Smartphone } from 'lucide-react';
 
@@ -6,33 +5,33 @@ const Features: React.FC = () => {
   const features = [
     {
       icon: <Zap className="w-8 h-8 text-sky-400" />,
-      title: "Turbo Velocidad",
-      description: "Optimizado con protocolos SSH, TCP y UDP para máxima fluidez en streaming y juegos."
+      title: "Turbo Velocidad Optimizada",
+      description: "Nuestra infraestructura utiliza protocolos SSH, TCP y UDP optimizados para reducir la latencia. Esto garantiza que el streaming de video en alta definición y los juegos en línea funcionen sin interrupciones, aprovechando al máximo el ancho de banda disponible."
     },
     {
       icon: <Shield className="w-8 h-8 text-emerald-400" />,
-      title: "Privacidad Total",
-      description: "No guardamos registros de tu tráfico ni actividad. Tu navegación es solo tuya."
+      title: "Cifrado de Extremo a Extremo",
+      description: "Implementamos túneles de seguridad que cifran cada byte de información antes de que salga de tu dispositivo. Bajo una estricta política de no-registros, garantizamos que tu historial de navegación y datos personales permanezcan invisibles para terceros."
     },
     {
       icon: <Globe className="w-8 h-8 text-indigo-400" />,
-      title: "Acceso Global",
-      description: "Conéctate a servidores de alto rendimiento estratégicamente ubicados para mejor latencia."
+      title: "Nodos de Acceso Global",
+      description: "Contamos con una red de servidores distribuidos en puntos clave de intercambio de internet a nivel mundial. Esto permite a nuestros usuarios cambiar su ubicación virtual para acceder a contenido diverso y evitar limitaciones geográficas injustas."
     },
     {
       icon: <Lock className="w-8 h-8 text-amber-400" />,
-      title: "Seguridad SSH-VPN",
-      description: "Túneles de conexión cifrados para proteger tus datos de cualquier amenaza externa."
+      title: "Protocolos SSH-VPN Seguros",
+      description: "A diferencia de las VPN convencionales, TurboMX utiliza Secure Shell (SSH) para crear túneles de datos altamente resistentes a la inspección profunda de paquetes (DPI), proporcionando una capa extra de anonimato incluso en redes restringidas."
     },
     {
       icon: <Cpu className="w-8 h-8 text-rose-400" />,
-      title: "Bajo Consumo",
-      description: "App ultra ligera diseñada para no agotar tu batería ni ralentizar tu dispositivo móvil."
+      title: "Arquitectura de Bajo Consumo",
+      description: "Nuestra aplicación ha sido desarrollada con un motor ligero que minimiza el uso de CPU y memoria RAM. Esto se traduce en un menor impacto en la duración de la batería de tu dispositivo móvil, permitiendo una protección activa durante todo el día."
     },
     {
       icon: <Smartphone className="w-8 h-8 text-cyan-400" />,
-      title: "Interfaz Moderna",
-      description: "Diseño intuitivo pensado en el usuario mexicano. Conexión en un solo toque."
+      title: "Experiencia Centrada en el Usuario",
+      description: "Diseñamos una interfaz intuitiva y moderna que permite establecer una conexión segura con un solo toque. Eliminamos las configuraciones complejas para que cualquier usuario, sin importar su nivel técnico, pueda proteger su privacidad instantáneamente."
     }
   ];
 
@@ -41,8 +40,8 @@ const Features: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">¿Por qué elegir <span className="text-sky-500">TurboMX VPN</span>?</h2>
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            Combinamos tecnología de vanguardia con una experiencia de usuario simplificada para ofrecerte lo mejor en VPN.
+          <p className="text-slate-400 text-lg max-w-3xl mx-auto">
+            Combinamos tecnología de seguridad industrial con una experiencia simplificada. Nuestro compromiso es proporcionar una herramienta que sea tanto poderosa como fácil de usar.
           </p>
         </div>
 
@@ -53,7 +52,7 @@ const Features: React.FC = () => {
                 {feature.icon}
               </div>
               <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-              <p className="text-slate-400 leading-relaxed">{feature.description}</p>
+              <p className="text-slate-400 leading-relaxed text-sm">{feature.description}</p>
             </div>
           ))}
         </div>

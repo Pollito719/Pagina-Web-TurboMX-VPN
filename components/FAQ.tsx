@@ -6,20 +6,28 @@ const FAQ: React.FC = () => {
 
   const faqs = [
     {
-      question: "¿Es TurboMX VPN realmente seguro?",
-      answer: "Sí. Utilizamos protocolos de túnel SSH-VPN avanzados con cifrado de grado militar. No almacenamos registros de actividad de navegación de nuestros usuarios."
+      question: "¿Cómo garantiza TurboMX VPN mi anonimato en línea?",
+      answer: "TurboMX VPN utiliza protocolos de cifrado AES-256 bits, el estándar de la industria para seguridad gubernamental. Además, nuestra infraestructura está configurada para no generar registros de actividad (Logs), lo que significa que no almacenamos información sobre qué sitios visitas o qué datos transmites a través de nuestros servidores."
     },
     {
-      question: "¿En qué dispositivos puedo usar TurboMX VPN?",
-      answer: "Nuestra aplicación está optimizada para dispositivos Android. Puedes descargar la versión oficial directamente desde la Google Play Store."
+      question: "¿Es compatible con todas las redes móviles y Wi-Fi?",
+      answer: "Sí. Nuestra tecnología está diseñada para funcionar sin problemas en redes 3G, 4G, 5G y cualquier conexión Wi-Fi pública o privada. Los protocolos SSH y SSL que utilizamos son expertos en atravesar firewalls y restricciones de red que a menudo bloquean las VPN tradicionales."
     },
     {
-      question: "¿Ofrecen soporte técnico?",
-      answer: "Contamos con una comunidad activa en Telegram donde brindamos soporte y compartimos actualizaciones constantes sobre el estado de nuestros servidores."
+      question: "¿Por qué TurboMX es más rápida que otras aplicaciones similares?",
+      answer: "Utilizamos una arquitectura de servidores de 'baja densidad', lo que significa que no saturamos nuestros nodos con miles de usuarios. Además, optimizamos la pila TCP/IP de nuestros servidores para priorizar los paquetes de datos de streaming y juegos, reduciendo significativamente el ping."
     },
     {
-      question: "¿Cómo funciona el protocolo TCP/UDP?",
-      answer: "El protocolo UDP es ideal para streaming y juegos por su baja latencia, mientras que TCP garantiza que todos los paquetes de datos lleguen correctamente, ideal para navegación web segura."
+      question: "¿Debo configurar algo manualmente para que funcione?",
+      answer: "No es necesario. TurboMX VPN viene pre-configurada con los mejores ajustes para la mayoría de los usuarios. Solo debes presionar el botón de conectar y la aplicación seleccionará automáticamente el protocolo y el servidor más eficiente para tu ubicación actual."
+    },
+    {
+      question: "¿El servicio es totalmente gratuito?",
+      answer: "Ofrecemos una versión gratuita funcional financiada mediante anuncios mínimos (Google AdSense/AdMob). Esto nos permite costear el mantenimiento de servidores de alta gama y ofrecer un servicio de calidad profesional sin que el usuario final deba pagar una suscripción mensual."
+    },
+    {
+      question: "¿Cómo puedo contactar con el soporte técnico?",
+      answer: "Puedes contactarnos directamente a través de nuestro correo oficial soporte@turbomxvpn.com o unirte a nuestra comunidad oficial en Telegram, donde nuestros desarrolladores y moderadores ayudan a los usuarios en tiempo real con cualquier duda técnica."
     }
   ];
 
@@ -28,7 +36,7 @@ const FAQ: React.FC = () => {
       <div className="max-w-4xl mx-auto">
         <div className="flex items-center gap-4 mb-12">
           <HelpCircle className="text-sky-500 w-8 h-8" />
-          <h2 className="text-3xl md:text-4xl font-black">Preguntas Frecuentes</h2>
+          <h2 className="text-3xl md:text-4xl font-black">Centro de Ayuda y Preguntas Frecuentes</h2>
         </div>
         
         <div className="space-y-4">
@@ -42,7 +50,7 @@ const FAQ: React.FC = () => {
                 {openIndex === idx ? <ChevronUp className="text-sky-500" /> : <ChevronDown className="text-slate-500" />}
               </button>
               {openIndex === idx && (
-                <div className="px-8 pb-6 text-slate-400 animate-in fade-in slide-in-from-top-2">
+                <div className="px-8 pb-6 text-slate-400 animate-in fade-in slide-in-from-top-2 leading-relaxed">
                   {faq.answer}
                 </div>
               )}
