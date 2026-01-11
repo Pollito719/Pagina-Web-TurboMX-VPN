@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import Features from './components/Features';
 import About from './components/About';
 import HowItWorks from './components/HowItWorks';
+import Transparency from './components/Transparency';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsOfService from './components/TermsOfService';
 import FAQ from './components/FAQ';
@@ -26,6 +27,8 @@ const App: React.FC = () => {
 
         <HowItWorks />
 
+        <Transparency />
+
         <FAQ />
 
         <section id="download" className="py-24 px-6 relative overflow-hidden">
@@ -33,7 +36,7 @@ const App: React.FC = () => {
           <div className="max-w-5xl mx-auto glass-effect rounded-[3rem] p-10 md:p-20 text-center border border-sky-500/20 shadow-2xl">
             <h2 className="text-4xl md:text-6xl font-black mb-8 leading-tight">Privacidad total a un <br/><span className="text-sky-500 underline decoration-sky-500/30">solo clic</span> de distancia</h2>
             <p className="text-slate-400 text-xl mb-12 max-w-2xl mx-auto leading-relaxed">
-              TurboMX VPN es la herramienta definitiva para quienes valoran su seguridad en redes Wi-Fi públicas y la integridad de sus comunicaciones móviles.
+              TurboMX VPN es la herramienta definitiva para quienes valoran su seguridad en redes Wi-Fi públicas y la integridad de sus comunicaciones móviles en México y el mundo.
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -58,7 +61,7 @@ const App: React.FC = () => {
               </a>
             </div>
             
-            <p className="mt-8 text-slate-500 text-sm font-medium">Compatible con Android 7.0 o superior | Optimizado para redes 5G</p>
+            <p className="mt-8 text-slate-500 text-sm font-medium">Compatible con Android 7.0 o superior | Optimizado para redes 4G/5G</p>
           </div>
         </section>
 
