@@ -26,20 +26,32 @@
       {
         "source": "/ads.txt",
         "headers": [
-          { "key": "Content-Type", "value": "text/plain; charset=utf-8" },
-          { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
+          {
+            "key": "Content-Type",
+            "value": "text/plain; charset=utf-8"
+          },
+          {
+            "key": "Cache-Control",
+            "value": "no-cache, no-store, must-revalidate"
+          }
         ]
       },
       {
         "source": "/robots.txt",
         "headers": [
-          { "key": "Content-Type", "value": "text/plain; charset=utf-8" }
+          {
+            "key": "Content-Type",
+            "value": "text/plain; charset=utf-8"
+          }
         ]
       },
       {
         "source": "/**/assets/**/*",
         "headers": [
-          { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
         ]
       }
     ]
