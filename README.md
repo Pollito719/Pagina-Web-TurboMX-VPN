@@ -1,20 +1,17 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Guía de Despliegue - TurboMX VPN
 
-# Run and deploy your AI Studio app
+Si el comando `npm run build` no funciona, sigue estos pasos:
 
-This contains everything you need to run your app locally.
+1. **Instalar Node.js**: Descárgalo en [nodejs.org](https://nodejs.org/).
+2. **Abrir Terminal**: Abre la terminal en la carpeta del proyecto.
+3. **Instalar dependencias**:
+   ```bash
+   npm install
+   ```
+4. **Construir el proyecto**:
+   ```bash
+   npm run build
+   ```
+5. **Subir al Hosting**: Copia todo el contenido de la carpeta `dist/` que se acaba de crear y súbelo a tu hosting (dentro de `public_html` o similar).
 
-View your app in AI Studio: https://ai.studio/apps/drive/1WubSF0UQmFD4GyJL7L4bXA_D5GXcQNH8
-
-## Run Locally
-
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+¡Tu web ya estará en línea!

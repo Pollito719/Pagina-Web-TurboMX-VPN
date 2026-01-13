@@ -1,25 +1,22 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/',
+  base: './',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
-    emptyOutDir: true,
-    sourcemap: false,
-    minify: 'terser',
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom', 'lucide-react'],
-        },
+    minify: 'terser', // Cambiamos a terser explícitamente para mayor estabilidad en ciertos hostings
+    terserOptions: {
+      compress: {
+        drop_console: true,
       },
     },
-  },
-  server: {
-    port: 3000,
+    rollupOptions: {
+      output: {
+        manualChunks: undefined, // Dejamos que Vite decida para evitar errores de carga de trozos
+      },
+    },
   },
 });
