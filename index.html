@@ -3,68 +3,81 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TurboMX VPN - Seguridad y Privacidad en tu Conexión</title>
-    <meta name="description" content="TurboMX VPN ofrece navegación segura, privada y ultra rápida con protocolos SSH, TCP y UDP. Protege tus datos y accede a contenido global de forma profesional." />
+    <title>TurboMX VPN | Velocidad Global y Privacidad Absoluta</title>
+    
+    <!-- SEO Primario -->
+    <meta name="title" content="TurboMX VPN | Velocidad Global y Privacidad Absoluta" />
+    <meta name="description" content="La VPN más rápida para Latinoamérica y el mundo. Protege tu conexión con protocolos militares, baja latencia para gaming y acceso sin fronteras." />
+    <meta name="keywords" content="VPN, TurboMX, Seguridad Digital, Proxy México, VPN Latinoamérica, Internet Seguro, SSH Tunnel" />
+    <meta name="author" content="TurboMX Team" />
+
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://turbomxvpn.com/" />
+    <meta property="og:title" content="TurboMX VPN | Conexión Global Sin Fronteras" />
+    <meta property="og:description" content="Navega seguro en toda Latinoamérica y el extranjero con la mejor tecnología de túneles cifrados." />
+    <meta property="og:image" content="https://www.dropbox.com/scl/fi/h8fxjyge9nqnle2jbnj7s/turbo.png?rlkey=nnhw7iy2blbssn7wyxasrvp7t&st=7njbu0cq&raw=1" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="TurboMX VPN | Privacidad de Grado Militar" />
+    <meta property="twitter:description" content="Descarga la app y navega sin límites con nodos de alta velocidad internacionales." />
+    <meta property="twitter:image" content="https://www.dropbox.com/scl/fi/h8fxjyge9nqnle2jbnj7s/turbo.png?rlkey=nnhw7iy2blbssn7wyxasrvp7t&st=7njbu0cq&raw=1" />
+
     <link rel="icon" type="image/png" href="https://www.dropbox.com/scl/fi/h8fxjyge9nqnle2jbnj7s/turbo.png?rlkey=nnhw7iy2blbssn7wyxasrvp7t&st=7njbu0cq&raw=1" />
     
-    <!-- Open Graph para redes sociales -->
-    <meta property="og:title" content="TurboMX VPN - Privacidad Digital" />
-    <meta property="og:description" content="Protección avanzada con túneles SSH para tu Android." />
-    <meta property="og:type" content="website" />
-    
-    <!-- Schema.org JSON-LD (Vital para AdSense/SEO) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "TurboMX VPN",
-      "operatingSystem": "Android",
-      "applicationCategory": "NetworkingApplication",
-      "description": "Herramienta de seguridad para navegación privada y encriptada.",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      }
-    }
-    </script>
-
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+      :root {
+        --sky-primary: #38bdf8;
+        --indigo-primary: #818cf8;
+      }
       body {
-        font-family: 'Inter', sans-serif;
+        font-family: 'Plus Jakarta Sans', sans-serif;
         scroll-behavior: smooth;
+        background-color: #020617;
+        color: #f1f5f9;
       }
-      .glass-effect {
-        background: rgba(15, 23, 42, 0.8);
-        backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+      .glass {
+        background: rgba(15, 23, 42, 0.7);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
       }
-      .gradient-text {
-        background: linear-gradient(90deg, #38bdf8, #818cf8);
+      .text-gradient {
+        background: linear-gradient(135deg, var(--sky-primary) 0%, var(--indigo-primary) 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
-      .hero-gradient {
-        background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.15), transparent),
-                    radial-gradient(circle at bottom left, rgba(129, 140, 248, 0.15), transparent);
+      .grid-pattern {
+        background-image: radial-gradient(rgba(56, 189, 248, 0.08) 1px, transparent 1px);
+        background-size: 40px 40px;
+      }
+      .glass-card {
+        background: rgba(30, 41, 59, 0.4);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: all 0.3s ease;
+      }
+      .glass-card:hover {
+        border-color: rgba(56, 189, 248, 0.2);
+        background: rgba(30, 41, 59, 0.6);
       }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3/",
-    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
-    "vite": "https://esm.sh/vite@^7.3.0"
-  }
-}
-</script>
-</head>
-  <body class="bg-slate-950 text-white overflow-x-hidden">
+    <script type="importmap">
+    {
+      "imports": {
+        "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+        "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+        "react/": "https://esm.sh/react@^19.2.3/",
+        "react": "https://esm.sh/react@^19.2.3/",
+        "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
+        "vite": "https://esm.sh/vite@^7.3.0"
+      }
+    }
+    </script>
+  </head>
+  <body class="overflow-x-hidden">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
   </body>
