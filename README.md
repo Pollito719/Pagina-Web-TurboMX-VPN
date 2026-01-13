@@ -1,17 +1,36 @@
 # Guía de Despliegue - TurboMX VPN
 
-Si el comando `npm run build` no funciona, sigue estos pasos:
+Sigue estos pasos para poner tu web en línea:
 
-1. **Instalar Node.js**: Descárgalo en [nodejs.org](https://nodejs.org/).
-2. **Abrir Terminal**: Abre la terminal en la carpeta del proyecto.
-3. **Instalar dependencias**:
+## 1. Solución al error de Build
+Si `npm run build` falla, es porque faltan las dependencias locales. Ejecuta:
+```bash
+npm install
+```
+
+## 2. Despliegue en Firebase Hosting
+Una vez que tengas Node.js instalado:
+
+1. **Instalar Firebase CLI**:
    ```bash
-   npm install
+   npm install -g firebase-tools
    ```
-4. **Construir el proyecto**:
+2. **Login**:
+   ```bash
+   firebase login
+   ```
+3. **Build del proyecto**:
    ```bash
    npm run build
    ```
-5. **Subir al Hosting**: Copia todo el contenido de la carpeta `dist/` que se acaba de crear y súbelo a tu hosting (dentro de `public_html` o similar).
+4. **Desplegar**:
+   ```bash
+   firebase deploy
+   ```
 
-¡Tu web ya estará en línea!
+## 3. Despliegue en Hosting Convencional (cPanel)
+1. Ejecuta `npm run build`.
+2. Sube todo el contenido de la carpeta `dist/` a tu servidor vía FTP o Administrador de Archivos.
+
+---
+**Nota:** Asegúrate de que tu `firebase.json` tenga `"public": "dist"` para que Firebase sepa qué archivos subir.
