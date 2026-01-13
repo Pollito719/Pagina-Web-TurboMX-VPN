@@ -5,4 +5,5 @@ Allow: /ads.txt
 User-agent: Mediapartners-Google
 Allow: /
 
-Sitemap: https://tusitio-turbomx.web.app/sitemap.xml
+# Sustituye con tu dominio real de Netcup para mejor SEO
+Sitemap: https://turbomxvpn.com/sitemap.xml
