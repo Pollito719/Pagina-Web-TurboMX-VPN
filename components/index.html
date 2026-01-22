@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TurboMX VPN | Conexión Pro y Privacidad Absoluta</title>
+    
+    <!-- SEO & Metadata -->
+    <meta name="description" content="TurboMX VPN: La solución definitiva para navegar seguro. Servidores de alta velocidad, cifrado militar y acceso sin límites. ¡Descárgala ya!" />
+    <meta name="theme-color" content="#020617" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="TurboMX VPN | Velocidad Máxima" />
+    <meta property="og:description" content="Protege tu privacidad con el túnel SSH más potente de la región." />
+    <meta property="og:image" content="https://www.dropbox.com/scl/fi/h8fxjyge9nqnle2jbnj7s/turbo.png?rlkey=nnhw7iy2blbssn7wyxasrvp7t&st=7njbu0cq&raw=1" />
+
+    <link rel="icon" type="image/png" href="https://www.dropbox.com/scl/fi/h8fxjyge9nqnle2jbnj7s/turbo.png?rlkey=nnhw7iy2blbssn7wyxasrvp7t&st=7njbu0cq&raw=1" />
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --sky-primary: #38bdf8;
+        --indigo-primary: #818cf8;
+      }
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        background-color: #020617;
+        color: #f1f5f9;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+      .glass {
+        background: rgba(15, 23, 42, 0.5);
+        backdrop-filter: blur(30px);
+        -webkit-backdrop-filter: blur(30px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .text-gradient {
+        background: linear-gradient(135deg, #38bdf8 0%, #818cf8 35%, #c084fc 70%, #fb7185 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 250% auto;
+        animation: textShine 6s linear infinite;
+      }
+      @keyframes textShine {
+        to { background-position: 250% center; }
+      }
+      .grid-pattern {
+        background-image: radial-gradient(rgba(56, 189, 248, 0.12) 1.5px, transparent 1.5px);
+        background-size: 40px 40px;
+      }
+      ::selection {
+        background: var(--sky-primary);
+        color: #000;
+      }
+      /* Custom Scrollbar Modern */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #020617;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #1e293b;
+        border-radius: 20px;
+        border: 2px solid #020617;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #38bdf8;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://esm.sh/lucide-react@^0.462.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.0.0/",
+    "react/": "https://esm.sh/react@^19.0.0/",
+    "react": "https://esm.sh/react@^19.0.0",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^4.3.4",
+    "vite": "https://esm.sh/vite@^6.0.5"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

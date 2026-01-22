@@ -1,76 +1,53 @@
-# 🚀 Guía de Despliegue - TurboMX VPN
+# 🚀 Despliegue Universal - TurboMX VPN
 
-Esta página está optimizada para funcionar en cualquier servidor VPS moderno.
+Esta web está diseñada para ser compatible con **cualquier infraestructura**. Sigue estas instrucciones para ponerla en línea hoy mismo.
 
-## 🛠️ Opción A: VPS con Nginx (Altamente Recomendado)
+## 🛠️ Opción 1: Hosting Compartido (cPanel / HostGator / Bluehost)
+1. Sube todos los archivos del directorio raíz a tu carpeta `public_html`.
+2. Asegúrate de incluir el archivo `.htaccess` (es un archivo oculto, verifica que tu explorador de archivos lo muestre).
+3. El `.htaccess` se encargará automáticamente de:
+   - Forzar la conexión segura **HTTPS**.
+   - Permitir que la navegación de la web funcione sin errores 404.
+   - Activar la compresión para una velocidad de carga óptima.
 
-Nginx es más eficiente para aplicaciones de alto tráfico como una VPN.
+---
 
-### 1. Preparar el servidor
-```bash
-sudo apt update
-sudo apt install nginx -y
-```
+## 🛠️ Opción 2: Servidor VPS (Nginx)
+Si utilizas Nginx en Ubuntu/Debian, añade este bloque de configuración a tu sitio:
 
-### 2. Subir tus archivos
-Sube el contenido de la carpeta `dist` (que obtienes al correr `npm run build`) a la ruta: `/var/www/turbomx`
-
-### 3. Configurar el bloque de servidor
-Crea el archivo `/etc/nginx/sites-available/turbomx`:
 ```nginx
 server {
     listen 80;
-    server_name tudominio.com www.tudominio.com;
+    server_name tudominio.com;
     root /var/www/turbomx;
     index index.html;
 
-    # Manejo de rutas SPA (Importante para React/Vite)
+    # Manejo de rutas para React (Evita errores al refrescar)
     location / {
         try_files $uri $uri/ /index.html;
     }
 
-    # Soporte para ads.txt
-    location = /ads.txt {
-        allow all;
-        log_not_found off;
-        access_log off;
-    }
-
-    # Optimización de archivos estáticos
+    # Habilitar compresión Gzip para mayor velocidad
+    gzip on;
+    gzip_types text/plain text/css application/json application/javascript text/xml;
+    
+    # Cache para recursos estáticos
     location ~* \.(?:ico|css|js|gif|jpe?g|png|woff2?|eot|ttf|svg)$ {
         expires 6M;
         access_log off;
         add_header Cache-Control "public";
     }
-
-    # Seguridad: No permitir acceso a archivos ocultos
-    location ~ /\. {
-        deny all;
-    }
 }
 ```
 
-### 4. Activar y reiniciar
-```bash
-sudo ln -s /etc/nginx/sites-available/turbomx /etc/nginx/sites-enabled/
-sudo nginx -t
-sudo systemctl restart nginx
-```
+---
+
+## 🛠️ Opción 3: Plataformas Cloud (Vercel / Firebase)
+- **Vercel**: Detectará automáticamente la configuración con el archivo `vercel.json` incluido.
+- **Firebase**: Utiliza el archivo `firebase.json` y ejecuta `firebase deploy`.
 
 ---
 
-## 🛠️ Opción B: VPS con Apache (cPanel / LAMP)
-
-Si tu VPS usa Apache, el archivo `.htaccess` que he incluido en la carpeta `public` ya tiene todo lo que necesitas configurado automáticamente.
-
-**Pasos:**
-1. Genera la build: `npm run build`
-2. Sube todo el contenido de `dist/` a tu carpeta `public_html`.
-3. El archivo `.htaccess` se encargará de:
-   - Forzar HTTPS.
-   - Arreglar las rutas de la página.
-   - Comprimir los archivos para que carguen más rápido.
-
----
-
-**Contacto de Soporte:** alexishdzcabnas889@gmail.com
+**Soporte Técnico:**
+- **Email:** alexishdzcabnas889@gmail.com
+- **Telegram:** @internetGratisMexico

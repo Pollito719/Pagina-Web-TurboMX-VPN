@@ -1,33 +1,44 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TurboMX VPN | Velocidad Global y Privacidad Absoluta</title>
+    <title>TurboMX VPN | Portal de Ciberseguridad y Privacidad Digital</title>
     
-    <!-- SEO Primario -->
-    <meta name="title" content="TurboMX VPN | Velocidad Global y Privacidad Absoluta" />
-    <meta name="description" content="La VPN más rápida para Latinoamérica y el mundo. Protege tu conexión con protocolos militares, baja latencia para gaming y acceso sin fronteras." />
-    <meta name="keywords" content="VPN, TurboMX, Seguridad Digital, Proxy México, VPN Latinoamérica, Internet Seguro, SSH Tunnel" />
-    <meta name="author" content="TurboMX Team" />
+    <!-- SEO & Autoridad de Contenido (Crítico para AdSense) -->
+    <meta name="description" content="TurboMX VPN: Expertos en túneles SSH, V2Ray y seguridad de red. Centro de recursos educativos sobre privacidad digital y cifrado de datos en Latinoamérica." />
+    <meta name="keywords" content="VPN, SSH, V2Ray, Ciberseguridad, Privacidad, Cifrado AES, Internet Seguro, Protocolos de Red, Seguridad Informática México" />
+    <meta name="author" content="Equipo Técnico TurboMX" />
+    <meta name="theme-color" content="#020617" />
 
-    <!-- Open Graph / Facebook / WhatsApp -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://turbomxvpn.com/" />
-    <meta property="og:title" content="TurboMX VPN | Conexión Global Sin Fronteras" />
-    <meta property="og:description" content="Navega seguro en toda Latinoamérica y el extranjero con la mejor tecnología de túneles cifrados." />
+    <!-- Google AdSense - REEMPLAZA EL ID ca-pub-XXXXXXXXXXXXXXXX CON TU ID REAL DE EDITOR -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="TurboMX VPN | Autoridad en Privacidad" />
+    <meta property="og:description" content="Protección avanzada y recursos técnicos sobre seguridad digital." />
     <meta property="og:image" content="https://www.dropbox.com/scl/fi/h8fxjyge9nqnle2jbnj7s/turbo.png?rlkey=nnhw7iy2blbssn7wyxasrvp7t&st=7njbu0cq&raw=1" />
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:title" content="TurboMX VPN | Privacidad de Grado Militar" />
-    <meta property="twitter:description" content="Descarga la app y navega sin límites con nodos de alta velocidad internacionales." />
-    <meta property="twitter:image" content="https://www.dropbox.com/scl/fi/h8fxjyge9nqnle2jbnj7s/turbo.png?rlkey=nnhw7iy2blbssn7wyxasrvp7t&st=7njbu0cq&raw=1" />
 
     <link rel="icon" type="image/png" href="https://www.dropbox.com/scl/fi/h8fxjyge9nqnle2jbnj7s/turbo.png?rlkey=nnhw7iy2blbssn7wyxasrvp7t&st=7njbu0cq&raw=1" />
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.0.0",
+    "react-dom": "https://esm.sh/react-dom@^19.0.0",
+    "react-dom/client": "https://esm.sh/react-dom@^19.0.0/client",
+    "lucide-react": "https://esm.sh/lucide-react@^0.462.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "vite": "https://esm.sh/vite@^7.3.1",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
+  }
+}
+</script>
+
     <style>
       :root {
         --sky-primary: #38bdf8;
@@ -35,55 +46,35 @@
       }
       body {
         font-family: 'Plus Jakarta Sans', sans-serif;
-        scroll-behavior: smooth;
         background-color: #020617;
         color: #f1f5f9;
+        overflow-x: hidden;
+        margin: 0;
       }
       .glass {
-        background: rgba(15, 23, 42, 0.7);
-        backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.05);
+        background: rgba(15, 23, 42, 0.6);
+        backdrop-filter: blur(30px);
+        -webkit-backdrop-filter: blur(30px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
       }
       .text-gradient {
-        background: linear-gradient(135deg, var(--sky-primary) 0%, var(--indigo-primary) 100%);
+        background: linear-gradient(135deg, #38bdf8 0%, #818cf8 35%, #c084fc 70%, #fb7185 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        background-size: 200% auto;
+        animation: shine 5s linear infinite;
       }
-      .grid-pattern {
-        background-image: radial-gradient(rgba(56, 189, 248, 0.08) 1px, transparent 1px);
-        background-size: 40px 40px;
+      @keyframes shine {
+        to { background-position: 200% center; }
       }
-      .glass-card {
-        background: rgba(30, 41, 59, 0.4);
-        backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.05);
-        transition: all 0.3s ease;
-      }
-      .glass-card:hover {
-        border-color: rgba(56, 189, 248, 0.2);
-        background: rgba(30, 41, 59, 0.6);
-      }
-      .glass-effect {
-        background: rgba(15, 23, 42, 0.8);
-        backdrop-filter: blur(12px);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-      }
+      ::-webkit-scrollbar { width: 8px; }
+      ::-webkit-scrollbar-track { background: #020617; }
+      ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 20px; }
+      ::-webkit-scrollbar-thumb:hover { background: #38bdf8; }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3",
-    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
-    "vite": "https://esm.sh/vite@^7.3.1"
-  }
-}
-</script>
-</head>
-  <body class="overflow-x-hidden">
+  </head>
+  <body>
     <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
+    <script type="module" src="./index.tsx"></script>
   </body>
 </html>

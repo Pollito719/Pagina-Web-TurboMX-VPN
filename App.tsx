@@ -5,10 +5,13 @@ import About from './components/About';
 import Features from './components/Features';
 import HowItWorks from './components/HowItWorks';
 import Transparency from './components/Transparency';
+import VPNResources from './components/VPNResources';
 import FAQ from './components/FAQ';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import CookieBanner from './components/CookieBanner';
+import PrivacyPolicy from './components/PrivacyPolicy';
+import TermsOfService from './components/TermsOfService';
 
 const App: React.FC = () => {
   return (
@@ -19,7 +22,7 @@ const App: React.FC = () => {
         <Hero />
         
         {/* Global Statistics Section */}
-        <div className="relative z-10 -mt-24 px-6 mb-24">
+        <section className="relative z-10 -mt-24 px-6 mb-24">
           <div className="max-w-6xl mx-auto glass rounded-[4rem] p-10 md:p-16 shadow-[0_40px_100px_rgba(0,0,0,0.5)] border-white/5">
              <div className="grid md:grid-cols-3 gap-12 text-center">
                 <div className="animate-fade-in" style={{ animationDelay: '0.1s' }}>
@@ -36,13 +39,22 @@ const App: React.FC = () => {
                 </div>
              </div>
           </div>
-        </div>
+        </section>
 
         <About />
         <Features />
         <HowItWorks />
         <Transparency />
+        
+        {/* Sección de Contenido de Alto Valor para AdSense */}
+        <VPNResources />
+        
         <FAQ />
+        
+        {/* Contenido Legal Obligatorio */}
+        <PrivacyPolicy />
+        <TermsOfService />
+        
         <Contact />
       </main>
 

@@ -6,6 +6,10 @@ const FAQ: React.FC = () => {
 
   const faqs = [
     {
+      question: "¿En qué países funciona TurboMX VPN?",
+      answer: "¡En todo el mundo! TurboMX VPN está optimizada especialmente para Latinoamérica (México, Colombia, Perú, Argentina, Chile, Ecuador, etc.), pero también cuenta con servidores de alto rendimiento en Estados Unidos, Europa y Asia, permitiéndote saltar restricciones geográficas en más de 50 países."
+    },
+    {
       question: "¿Cómo garantiza TurboMX VPN mi anonimato en línea?",
       answer: "TurboMX VPN utiliza protocolos de cifrado AES-256 bits, el estándar de la industria para seguridad gubernamental. Además, nuestra infraestructura está configurada para no generar registros de actividad (Logs), lo que significa que no almacenamos información sobre qué sitios visitas o qué datos transmites a través de nuestros servidores."
     },
@@ -15,19 +19,15 @@ const FAQ: React.FC = () => {
     },
     {
       question: "¿Por qué TurboMX es más rápida que otras aplicaciones similares?",
-      answer: "Utilizamos una arquitectura de servidores de 'baja densidad', lo que significa que no saturamos nuestros nodos con miles de usuarios. Además, optimizamos la pila TCP/IP de nuestros servidores para priorizar los paquetes de datos de streaming y juegos, reduciendo significativamente el ping."
+      answer: "Utilizamos una arquitectura de servidores de 'baja densidad', lo que significa que no saturamos nuestros nodos con miles de usuarios. Además, optimizamos la pila TCP/IP de nuestros servidores para priorizar los paquetes de datos de streaming y juegos, reduciendo significativamente el ping regional."
     },
     {
       question: "¿Debo configurar algo manualmente para que funcione?",
       answer: "No es necesario. TurboMX VPN viene pre-configurada con los mejores ajustes para la mayoría de los usuarios. Solo debes presionar el botón de conectar y la aplicación seleccionará automáticamente el protocolo y el servidor más eficiente para tu ubicación actual."
     },
     {
-      question: "¿El servicio es totalmente gratuito?",
-      answer: "Ofrecemos una versión gratuita funcional financiada mediante anuncios mínimos (Google AdSense/AdMob). Esto nos permite costear el mantenimiento de servidores de alta gama y ofrecer un servicio de calidad profesional sin que el usuario final deba pagar una suscripción mensual."
-    },
-    {
-      question: "¿Cómo puedo contactar con el soporte técnico?",
-      answer: "Puedes contactarnos directamente a través de nuestro correo oficial soporte@turbomxvpn.com o unirte a nuestra comunidad oficial en Telegram, donde nuestros desarrolladores y moderadores ayudan a los usuarios en tiempo real con cualquier duda técnica."
+      question: "¿El servicio es gratuito?",
+      answer: "Ofrecemos acceso funcional financiado mediante anuncios mínimos. Esto nos permite costear el mantenimiento de servidores de alta gama en toda Latinoamérica y ofrecer un servicio de calidad profesional sin costo de suscripción obligatorio para el usuario básico."
     }
   ];
 
@@ -36,7 +36,7 @@ const FAQ: React.FC = () => {
       <div className="max-w-4xl mx-auto">
         <div className="flex items-center gap-4 mb-12">
           <HelpCircle className="text-sky-500 w-8 h-8" />
-          <h2 className="text-3xl md:text-4xl font-black">Centro de Ayuda y Preguntas Frecuentes</h2>
+          <h2 className="text-3xl md:text-4xl font-black">Preguntas Frecuentes</h2>
         </div>
         
         <div className="space-y-4">
