@@ -1,2 +1,1 @@
-# TurboMX VPN Authorized Sellers
-google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+google.com, pub-5134528093158075, DIRECT, f08c47fec0942fa0
