@@ -1,71 +1,42 @@
-# 🚀 Guía de Despliegue Universal - TurboMX VPN
+# 🛡️ TurboMX VPN - Solución Definitiva AdSense & Despliegue
 
-Esta aplicación está optimizada para funcionar en cualquier infraestructura de servidor. Sigue las instrucciones según tu tipo de hosting.
+Sigue estos pasos para corregir el rechazo de AdSense y desplegar en cualquier servidor.
 
-## 📁 Estructura para el Despliegue
-Asegúrate de que los siguientes archivos estén en la raíz de tu servidor (`public_html`, `/var/www/html`, etc.):
-- `index.html`
-- `index.tsx`
-- `.htaccess` (Fundamental para Apache)
-- `ads.txt` (Fundamental para AdSense)
-- `robots.txt`
-- `sitemap.xml`
+## 🛑 Cómo corregir el rechazo de Google AdSense
+Si Google rechazó tu sitio por "Contenido de escaso valor", sigue esta lista de verificación:
 
----
-
-## 🛠️ Opción 1: Hosting Compartido (cPanel / HostGator / Bluehost)
-1. Sube todos los archivos a la carpeta `public_html`.
-2. El archivo `.htaccess` incluido configurará automáticamente:
-   - Redirección a HTTPS.
-   - Manejo de rutas internas de React (evita errores 404).
-   - Compresión Gzip para carga rápida.
-3. Verifica que `ads.txt` sea accesible en `tudominio.com/ads.txt`.
+1.  **Sustitución de IDs (OBLIGATORIO)**:
+    - Abre `index.html` y busca `ca-pub-XXXXXXXXXXXXXXXX`. Cámbialo por tu ID real de AdSense.
+    - Abre `ads.txt` y cambia `pub-XXXXXXXXXXXXXXXX` por tu ID de editor.
+2.  **Dominio en Sitemap**: Abre `sitemap.xml` y cambia `turbomxvpn.com` por tu dominio real. Esto es vital para que Google rastree el nuevo contenido educativo.
+3.  **No solicites la revisión de inmediato**: Espera a que Google Search Console indexe las nuevas secciones de "Conocimiento Técnico".
+4.  **Generar Tráfico Orgánico**: AdSense prefiere sitios que ya tengan visitas. Comparte el enlace en foros o redes sociales para que el bot detecte actividad humana.
 
 ---
 
-## 🛠️ Opción 2: Servidor VPS (Nginx - Ubuntu/Debian)
-Crea o edita el archivo de configuración de tu sitio en `/etc/nginx/sites-available/turbomx`:
+## 🚀 Despliegue en Cualquier Hosting
 
-```nginx
-server {
-    listen 80;
-    server_name tudominio.com;
-    root /var/www/turbomx; # Cambia esto a tu ruta real
-    index index.html;
+### Opción A: Hosting cPanel (Apache)
+Sube todos los archivos a `public_html`. El archivo `.htaccess` incluido se encargará de:
+- Forzar HTTPS.
+- Manejar las rutas de la App.
+- Habilitar compresión Gzip.
 
-    # Soporte para React / SPA
-    location / {
-        try_files $uri $uri/ /index.html;
-    }
+### Opción B: VPS (Nginx)
+Usa la configuración en `nginx.conf`. Asegúrate de que el bloque `location /` apunte correctamente a `index.html`.
 
-    # Caché para archivos estáticos
-    location ~* \.(?:ico|css|js|gif|jpe?g|png|woff2?|eot|ttf|svg)$ {
-        expires 6M;
-        access_log off;
-        add_header Cache-Control "public";
-    }
-
-    # Asegurar ads.txt
-    location = /ads.txt {
-        allow all;
-        log_not_found off;
-        access_log off;
-    }
-}
+### Opción C: VPS (Docker/Node)
+Si prefieres un entorno Node, asegúrate de servir la carpeta como archivos estáticos:
+```bash
+npm install -g serve
+serve -s .
 ```
 
 ---
 
-## 🛠️ Opción 3: Vercel / Netlify / Firebase
-- **Vercel**: El despliegue es automático gracias al archivo `vercel.json`.
-- **Firebase**: Ejecuta `firebase deploy` usando el archivo `firebase.json` incluido.
+## 📁 Archivos Clave para AdSense
+- `/ads.txt`: Debe ser accesible en `tudominio.com/ads.txt`.
+- `/sitemap.xml`: Debe estar registrado en Google Search Console.
+- `/index.html`: Debe contener el script de AdSense en el `<head>`.
 
----
-
-## ⚠️ NOTA CRÍTICA PARA ADSENSE
-Para que Google apruebe el sitio, **DEBES** reemplazar los IDs de ejemplo:
-1. En `index.html`: Cambia `ca-pub-XXXXXXXXXXXXXXXX` por tu ID real.
-2. En `ads.txt`: Cambia `pub-XXXXXXXXXXXXXXXX` por tu ID real.
-3. Asegúrate de que el dominio en `sitemap.xml` y `robots.txt` sea el tuyo.
-
-**Soporte:** alexishdzcabnas889@gmail.com
+**Soporte Técnico:** alexishdzcabnas889@gmail.com
