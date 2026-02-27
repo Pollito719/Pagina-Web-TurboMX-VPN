@@ -28,6 +28,18 @@ const FAQ: React.FC = () => {
     {
       question: "¿El servicio es gratuito?",
       answer: "Ofrecemos acceso funcional financiado mediante anuncios mínimos. Esto nos permite costear el mantenimiento de servidores de alta gama en toda Latinoamérica y ofrecer un servicio de calidad profesional sin costo de suscripción obligatorio para el usuario básico."
+    },
+    {
+      question: "¿Cómo puedo inhabilitar la publicidad personalizada?",
+      answer: "TurboMX VPN respeta tus preferencias. Puedes gestionar o inhabilitar la publicidad personalizada de Google visitando la configuración de anuncios de tu cuenta de Google o a través de las opciones de privacidad de tu dispositivo móvil."
+    },
+    {
+      question: "¿Qué protocolos de red utiliza TurboMX?",
+      answer: "Nuestra infraestructura soporta una variedad de protocolos avanzados incluyendo SSH, SSL, V2Ray (VMess/VLESS) y Trojan. Estos protocolos están optimizados para evadir la inspección profunda de paquetes (DPI) y garantizar una conexión estable en entornos de red altamente restringidos."
+    },
+    {
+      question: "¿TurboMX VPN guarda registros de mi actividad?",
+      answer: "No. Tenemos una política estricta de 'Zero-Logs'. No recolectamos, almacenamos ni compartimos información sobre tu historial de navegación, consultas DNS o direcciones IP de destino. Tu privacidad es nuestra prioridad absoluta."
     }
   ];
 

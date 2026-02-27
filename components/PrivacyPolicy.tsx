@@ -51,6 +51,10 @@ const PrivacyPolicy: React.FC = () => {
                   </div>
                   <div className="flex gap-4 items-start">
                     <div className="w-2 h-2 rounded-full bg-sky-500 mt-2 flex-shrink-0"></div>
+                    <p><strong>Proveedores de Terceros:</strong> Otros proveedores o redes publicitarias de terceros también pueden utilizar cookies para publicar anuncios en nuestro sitio. Usted puede visitar los sitios web de estos proveedores para inhabilitar el uso de cookies para la publicidad personalizada.</p>
+                  </div>
+                  <div className="flex gap-4 items-start">
+                    <div className="w-2 h-2 rounded-full bg-sky-500 mt-2 flex-shrink-0"></div>
                     <p><strong>Inhabilitación:</strong> Usted puede inhabilitar el uso de la cookie de DART visitando la política de privacidad de la red publicitaria de Google en <a href="https://policies.google.com/technologies/ads" className="text-sky-400 underline font-bold" target="_blank" rel="noopener">Google Ads Settings</a>.</p>
                   </div>
                 </div>
@@ -60,22 +64,25 @@ const PrivacyPolicy: React.FC = () => {
             <section className="bg-slate-950/40 p-10 rounded-[3rem] border border-white/5">
               <h3 className="text-xl font-black text-white mb-8 flex items-center gap-4 uppercase tracking-wider">
                 <Database className="w-6 h-6 text-sky-500" />
-                Política Estricta de No-Registros
+                Política de No-Registros
               </h3>
               <p className="text-sm mb-6 text-slate-400">
                 Nuestra arquitectura técnica impide físicamente la recolección de logs de actividad. Garantizamos que NO almacenamos:
               </p>
-              <ul className="space-y-3">
+              <ul className="space-y-3 mb-8">
                 <li className="flex items-center gap-3 bg-white/5 p-3 rounded-2xl border border-white/5 text-xs font-bold text-slate-300">
                   <ShieldCheck size={14} className="text-emerald-500" /> Historial de URLs visitadas
                 </li>
                 <li className="flex items-center gap-3 bg-white/5 p-3 rounded-2xl border border-white/5 text-xs font-bold text-slate-300">
                   <ShieldCheck size={14} className="text-emerald-500" /> Consultas de servidores DNS
                 </li>
-                <li className="flex items-center gap-3 bg-white/5 p-3 rounded-2xl border border-white/5 text-xs font-bold text-slate-300">
-                  <ShieldCheck size={14} className="text-emerald-500" /> Direcciones IP de origen/destino
-                </li>
               </ul>
+              <h3 className="text-xl font-black text-white mb-6 flex items-center gap-4 uppercase tracking-wider">
+                Derechos GDPR & CCPA
+              </h3>
+              <div className="text-sm space-y-4 text-slate-400">
+                <p>Usted tiene derecho al acceso, rectificación y eliminación de sus datos. TurboMX VPN cumple con los marcos de transparencia exigidos por Google para editores.</p>
+              </div>
             </section>
           </div>
 

@@ -9,6 +9,7 @@ import VPNResources from './components/VPNResources';
 import FAQ from './components/FAQ';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Blog from './components/Blog';
 import CookieBanner from './components/CookieBanner';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsOfService from './components/TermsOfService';
@@ -48,6 +49,8 @@ const App: React.FC = () => {
         
         {/* Sección de Contenido de Alto Valor para AdSense */}
         <VPNResources />
+        
+        <Blog />
         
         <FAQ />
         

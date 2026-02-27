@@ -14,10 +14,13 @@ const About: React.FC = () => {
             
             <div className="space-y-8 text-slate-400 text-lg leading-relaxed text-justify">
               <p>
-                <strong>TurboMX VPN Engineering</strong> no es solo una aplicación de red; es un consorcio tecnológico dedicado a la investigación y desarrollo de infraestructuras de comunicaciones seguras. Desde nuestra fundación en México, hemos trabajado bajo la premisa de que la <strong>Neutralidad de Red</strong> es un pilar indispensable para el progreso democrático y la libertad de información.
+                <strong>TurboMX VPN Engineering Research Group</strong> es un consorcio tecnológico líder en América Latina, especializado en la investigación y desarrollo de infraestructuras de comunicaciones seguras y protocolos de transporte de datos. Desde nuestra fundación, hemos operado como un centro de pensamiento técnico, publicando análisis profundos sobre la <strong>Neutralidad de Red</strong> y la soberanía digital.
               </p>
               <p>
-                Nuestra misión corporativa es democratizar el acceso a herramientas de auditoría y protección de datos que anteriormente solo estaban disponibles para entornos empresariales de alto nivel. Implementamos políticas de <strong>Gobernanza de Datos</strong> estrictas, alineadas con las mejores prácticas internacionales de transparencia y seguridad.
+                Nuestra misión corporativa trasciende la simple provisión de servicios; buscamos educar a la comunidad global sobre los riesgos inherentes a la infraestructura de red actual. Implementamos políticas de <strong>Gobernanza de Datos</strong> alineadas con el estándar ISO/IEC 27001, garantizando que cada bit de información procesado por nuestras herramientas cumpla con los más altos niveles de integridad y confidencialidad.
+              </p>
+              <p className="text-sm border-l-2 border-sky-500 pl-6 py-2 bg-sky-500/5 rounded-r-xl">
+                Contribuimos activamente a proyectos de código abierto y participamos en foros internacionales de ciberseguridad para asegurar que la privacidad siga siendo un derecho accesible para todos, no un privilegio de pocos.
               </p>
             </div>
             

@@ -66,6 +66,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-4 text-slate-400 font-bold">
               <li><a href="#privacy" onClick={(e) => handleNavClick(e, '#privacy')} className="hover:text-white transition-colors">Aviso de Privacidad</a></li>
               <li><a href="#terms" onClick={(e) => handleNavClick(e, '#terms')} className="hover:text-white transition-colors">Términos Legales</a></li>
+              <li><a href="#blog" onClick={(e) => handleNavClick(e, '#blog')} className="hover:text-white transition-colors">Blog Técnico</a></li>
               <li><a href="#technology" onClick={(e) => handleNavClick(e, '#technology')} className="hover:text-white transition-colors">Documentación Técnica</a></li>
               <li><a href="#faq" onClick={(e) => handleNavClick(e, '#faq')} className="hover:text-white transition-colors">Base de Conocimiento</a></li>
             </ul>

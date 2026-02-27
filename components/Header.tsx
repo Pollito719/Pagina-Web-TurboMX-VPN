@@ -40,6 +40,7 @@ const Header: React.FC = () => {
   const navLinks = [
     { name: 'Inicio', href: '#', icon: <Shield size={16}/> },
     { name: 'Documentación', href: '#resources', icon: <Book size={16}/> },
+    { name: 'Blog', href: '#blog', icon: <Book size={16}/> },
     { name: 'Tecnología', href: '#technology', icon: <Info size={16}/> },
     { name: 'Ayuda', href: '#faq', icon: <HelpCircle size={16}/> },
     { name: 'Soporte', href: '#contact', icon: <Mail size={16}/> },

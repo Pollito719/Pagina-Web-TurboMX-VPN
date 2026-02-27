@@ -24,17 +24,39 @@ const TermsOfService: React.FC = () => {
                 1. Licencia de Uso
               </h3>
               <p className="text-sm text-slate-400">
-                Se concede permiso para descargar temporalmente una copia de la aplicación para uso personal y no comercial de forma transitoria. Esta es la concesión de una licencia, no una transferencia de título.
+                Se concede permiso para descargar temporalmente una copia de la aplicación para uso personal y no comercial de forma transitoria. Esta es la concesión de una licencia, no una transferencia de título. Bajo esta licencia, usted no puede modificar ni copiar los materiales.
               </p>
             </div>
             
             <div className="space-y-4">
               <h3 className="text-xl font-black text-white flex items-center gap-2">
                 <AlertTriangle className="text-amber-500 w-5 h-5" />
-                2. Restricciones
+                2. Restricciones de Uso
               </h3>
               <p className="text-sm text-slate-400">
-                Usted no debe: utilizar el servicio para actividades ilegales; intentar descompilar o realizar ingeniería inversa de cualquier software contenido en TurboMX VPN; eliminar cualquier anotación de copyright.
+                Usted acepta no utilizar TurboMX VPN para: (a) actividades ilegales; (b) transmitir malware; (c) interferir con la seguridad de la red; (d) violar derechos de propiedad intelectual. El incumplimiento resultará en la terminación inmediata del servicio.
+              </p>
+            </div>
+          </section>
+
+          <section className="grid md:grid-cols-2 gap-8">
+            <div className="space-y-4">
+              <h3 className="text-xl font-black text-white flex items-center gap-2">
+                <ShieldCheck className="text-amber-500 w-5 h-5" />
+                3. Propiedad Intelectual
+              </h3>
+              <p className="text-sm text-slate-400">
+                Todo el contenido, logotipos, diseños y software en este sitio son propiedad exclusiva de TurboMX Engineering Research Group y están protegidos por leyes internacionales de derechos de autor.
+              </p>
+            </div>
+            
+            <div className="space-y-4">
+              <h3 className="text-xl font-black text-white flex items-center gap-2">
+                <FileText className="text-amber-500 w-5 h-5" />
+                4. Ley Aplicable
+              </h3>
+              <p className="text-sm text-slate-400">
+                Cualquier reclamo relacionado con TurboMX VPN se regirá por las leyes de la Ciudad de México, sin tener en cuenta sus disposiciones sobre conflictos de leyes.
               </p>
             </div>
           </section>

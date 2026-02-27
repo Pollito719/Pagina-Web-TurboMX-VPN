@@ -38,6 +38,38 @@ const Contact: React.FC = () => {
           </div>
         </div>
 
+        <div className="max-w-4xl mx-auto glass p-12 rounded-[3.5rem] border-white/5 mb-20">
+          <h3 className="text-2xl font-black text-white mb-8 text-center">Envíanos un Mensaje Directo</h3>
+          <form className="grid md:grid-cols-2 gap-6" onSubmit={(e) => { e.preventDefault(); alert('Mensaje enviado. Nuestro equipo técnico te contactará pronto.'); }}>
+            <div className="space-y-2">
+              <label className="text-[10px] font-black text-slate-500 uppercase tracking-widest ml-4">Nombre Completo</label>
+              <input type="text" required className="w-full bg-slate-900/50 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-sky-500 transition-colors" placeholder="Ej. Juan Pérez" />
+            </div>
+            <div className="space-y-2">
+              <label className="text-[10px] font-black text-slate-500 uppercase tracking-widest ml-4">Correo Electrónico</label>
+              <input type="email" required className="w-full bg-slate-900/50 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-sky-500 transition-colors" placeholder="tu@email.com" />
+            </div>
+            <div className="md:col-span-2 space-y-2">
+              <label className="text-[10px] font-black text-slate-500 uppercase tracking-widest ml-4">Asunto de la Consulta</label>
+              <select className="w-full bg-slate-900/50 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-sky-500 transition-colors appearance-none">
+                <option>Soporte Técnico de Red</option>
+                <option>Consulta de Ciberseguridad</option>
+                <option>Reporte de Vulnerabilidad</option>
+                <option>Alianzas de Investigación</option>
+              </select>
+            </div>
+            <div className="md:col-span-2 space-y-2">
+              <label className="text-[10px] font-black text-slate-500 uppercase tracking-widest ml-4">Mensaje Detallado</label>
+              <textarea required rows={4} className="w-full bg-slate-900/50 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-sky-500 transition-colors resize-none" placeholder="Describe tu consulta técnica..."></textarea>
+            </div>
+            <div className="md:col-span-2 mt-4">
+              <button type="submit" className="w-full py-5 bg-sky-500 hover:bg-sky-400 text-black font-black uppercase tracking-[0.2em] rounded-2xl transition-all shadow-lg shadow-sky-500/20">
+                Enviar Solicitud de Soporte
+              </button>
+            </div>
+          </form>
+        </div>
+
         <div className="flex flex-col md:flex-row items-center justify-center gap-10 py-10 border-y border-white/5">
            <div className="flex items-center gap-3 text-slate-500 font-black text-[10px] uppercase tracking-[0.3em]">
               <MapPin size={18} className="text-sky-500" /> Sede Técnica: Ciudad de México

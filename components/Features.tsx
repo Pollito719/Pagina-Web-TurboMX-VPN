@@ -36,7 +36,7 @@ const Features: React.FC = () => {
   ];
 
   return (
-    <section id="features" className="py-24 px-6 bg-slate-900/30">
+    <section id="technology" className="py-24 px-6 bg-slate-900/30">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">¿Por qué elegir <span className="text-sky-500">TurboMX VPN</span>?</h2>
