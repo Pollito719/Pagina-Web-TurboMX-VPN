@@ -1,3 +1,1 @@
-# TurboMX VPN Authorized Inventory
-# CRITICAL: Reemplaza 'REEMPLAZA_ESTO_CON_TU_ID' con tu ID de editor de AdSense (ej. pub-1234567890123456)
-google.com, REEMPLAZA_ESTO_CON_TU_ID, DIRECT, f08c47fec0942fa0
+google.com, pub-5134528093158075, DIRECT, f08c47fec0942fa0
