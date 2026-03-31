@@ -1,79 +1,31 @@
 import React from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import About from './components/About';
-import Features from './components/Features';
-import HowItWorks from './components/HowItWorks';
-import Transparency from './components/Transparency';
-import VPNResources from './components/VPNResources';
-import FAQ from './components/FAQ';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import Blog from './components/Blog';
-import CookieBanner from './components/CookieBanner';
-import PrivacyPolicy from './components/PrivacyPolicy';
-import TermsOfService from './components/TermsOfService';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Layout from './Layout';
+import Home from './Home';
+import AboutPage from './AboutPage';
+import BlogPage from './BlogPage';
+import ResourcesPage from './ResourcesPage';
+import ContactPage from './ContactPage';
+import PrivacyPage from './PrivacyPage';
+import TermsPage from './TermsPage';
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen selection:bg-sky-500 selection:text-white bg-[#020617]">
-      <Header />
-      
-      <main>
-        <Hero />
-        
-        {/* Global Statistics Section */}
-        <section className="relative z-10 -mt-24 px-6 mb-24">
-          <div className="max-w-6xl mx-auto glass rounded-[4rem] p-10 md:p-16 shadow-[0_40px_100px_rgba(0,0,0,0.5)] border-white/5">
-             <div className="grid md:grid-cols-3 gap-12 text-center">
-                <div className="animate-fade-in" style={{ animationDelay: '0.1s' }}>
-                   <h3 className="text-5xl font-black text-white mb-3 tracking-tighter italic">1M+</h3>
-                   <p className="text-slate-500 font-black uppercase tracking-[0.2em] text-[10px]">Usuarios Activos</p>
-                </div>
-                <div className="md:border-x border-white/10 py-8 md:py-0 md:px-12 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-                   <h3 className="text-5xl font-black text-sky-500 mb-3 tracking-tighter italic">99.9%</h3>
-                   <p className="text-slate-500 font-black uppercase tracking-[0.2em] text-[10px]">Uptime Garantizado</p>
-                </div>
-                <div className="animate-fade-in" style={{ animationDelay: '0.3s' }}>
-                   <h3 className="text-5xl font-black text-indigo-400 mb-3 tracking-tighter italic">0</h3>
-                   <p className="text-slate-500 font-black uppercase tracking-[0.2em] text-[10px]">Registros de Navegación</p>
-                </div>
-             </div>
-          </div>
-        </section>
-
-        <About />
-        <Features />
-        <HowItWorks />
-        <Transparency />
-        
-        {/* Sección de Contenido de Alto Valor para AdSense */}
-        <VPNResources />
-        
-        <Blog />
-        
-        <FAQ />
-        
-        {/* Contenido Legal Obligatorio */}
-        <PrivacyPolicy />
-        <TermsOfService />
-        
-        <Contact />
-      </main>
-
-      <Footer />
-      <CookieBanner />
-
-      <style>{`
-        @keyframes fade-in {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fade-in {
-          animation: fade-in 0.8s ease-out forwards;
-        }
-      `}</style>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="sobre-nosotros" element={<AboutPage />} />
+          <Route path="blog" element={<BlogPage />} />
+          <Route path="recursos" element={<ResourcesPage />} />
+          <Route path="contacto" element={<ContactPage />} />
+          <Route path="privacidad" element={<PrivacyPage />} />
+          <Route path="terminos" element={<TermsPage />} />
+          {/* Fallback to home for any other route to avoid 404s which AdSense dislikes */}
+          <Route path="*" element={<Home />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 };
 

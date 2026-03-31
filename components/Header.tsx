@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, Book, Shield, Info, HelpCircle, Mail } from 'lucide-react';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,37 +16,45 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement | HTMLDivElement>, href: string) => {
     setIsMobileMenuOpen(false);
 
-    if (href === '#') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      return;
-    }
+    if (href.startsWith('#')) {
+      if (location.pathname !== '/') {
+        e.preventDefault();
+        navigate('/' + href);
+        return;
+      }
 
-    const targetId = href.replace('#', '');
-    const element = document.getElementById(targetId);
-    
-    if (element) {
-      const headerOffset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      e.preventDefault();
+      if (href === '#') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
+      const targetId = href.replace('#', '');
+      const element = document.getElementById(targetId);
+      
+      if (element) {
+        const headerOffset = 80;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
     }
   };
 
   const navLinks = [
-    { name: 'Inicio', href: '#', icon: <Shield size={16}/> },
-    { name: 'Documentación', href: '#resources', icon: <Book size={16}/> },
-    { name: 'Blog', href: '#blog', icon: <Book size={16}/> },
-    { name: 'Tecnología', href: '#technology', icon: <Info size={16}/> },
+    { name: 'Inicio', href: '/', isPage: true, icon: <Shield size={16}/> },
+    { name: 'Sobre Nosotros', href: '/sobre-nosotros', isPage: true, icon: <Info size={16}/> },
+    { name: 'Documentación', href: '/recursos', isPage: true, icon: <Book size={16}/> },
+    { name: 'Blog', href: '/blog', isPage: true, icon: <Book size={16}/> },
     { name: 'Ayuda', href: '#faq', icon: <HelpCircle size={16}/> },
-    { name: 'Soporte', href: '#contact', icon: <Mail size={16}/> },
+    { name: 'Soporte', href: '/contacto', isPage: true, icon: <Mail size={16}/> },
   ];
 
   const appIcon = "https://www.dropbox.com/scl/fi/h8fxjyge9nqnle2jbnj7s/turbo.png?rlkey=nnhw7iy2blbssn7wyxasrvp7t&st=7njbu0cq&raw=1";
@@ -51,27 +62,41 @@ const Header: React.FC = () => {
   return (
     <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${isScrolled ? 'glass py-3 shadow-2xl' : 'bg-transparent py-6'}`}>
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <div className="flex items-center gap-3 group cursor-pointer" onClick={(e) => handleNavClick(e as any, '#')}>
-          <div className="w-10 h-10 rounded-xl overflow-hidden border border-white/10 shadow-lg group-hover:scale-110 transition-transform duration-300">
-            <img src={appIcon} alt="TurboMX VPN Logo" className="w-full h-full object-cover" />
-          </div>
-          <span className="text-2xl font-black tracking-tighter">
-            Turbo<span className="text-sky-500">MX</span>
-          </span>
+        <div className="flex items-center gap-3 group cursor-pointer" onClick={(e) => handleNavClick(e, '#')}>
+          <Link to="/" className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl overflow-hidden border border-white/10 shadow-lg group-hover:scale-110 transition-transform duration-300">
+              <img src={appIcon} alt="TurboMX VPN Logo" className="w-full h-full object-cover" />
+            </div>
+            <span className="text-2xl font-black tracking-tighter">
+              Turbo<span className="text-sky-500">MX</span>
+            </span>
+          </Link>
         </div>
 
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a 
-              key={link.name} 
-              href={link.href} 
-              onClick={(e) => handleNavClick(e, link.href)}
-              className="flex items-center gap-2 text-[10px] uppercase tracking-widest font-black text-slate-400 hover:text-white transition-all relative group"
-            >
-              <span className="text-sky-500 opacity-50 group-hover:opacity-100">{link.icon}</span>
-              {link.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
-            </a>
+            link.isPage ? (
+              <Link 
+                key={link.name} 
+                to={link.href}
+                className="flex items-center gap-2 text-[10px] uppercase tracking-widest font-black text-slate-400 hover:text-white transition-all relative group"
+              >
+                <span className="text-sky-500 opacity-50 group-hover:opacity-100">{link.icon}</span>
+                {link.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
+              </Link>
+            ) : (
+              <a 
+                key={link.name} 
+                href={link.href} 
+                onClick={(e) => handleNavClick(e, link.href)}
+                className="flex items-center gap-2 text-[10px] uppercase tracking-widest font-black text-slate-400 hover:text-white transition-all relative group"
+              >
+                <span className="text-sky-500 opacity-50 group-hover:opacity-100">{link.icon}</span>
+                {link.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
+              </a>
+            )
           ))}
           <a 
             href="https://play.google.com/store/apps/details?id=turbo.mx.anuncios"
@@ -97,15 +122,27 @@ const Header: React.FC = () => {
           </div>
           <div className="flex flex-col gap-10">
             {navLinks.map((link) => (
-              <a 
-                key={link.name} 
-                href={link.href} 
-                className="text-3xl font-black uppercase tracking-tighter text-slate-300 flex items-center gap-4"
-                onClick={(e) => handleNavClick(e, link.href)}
-              >
-                <span className="text-sky-500">{link.icon}</span>
-                {link.name}
-              </a>
+              link.isPage ? (
+                <Link 
+                  key={link.name} 
+                  to={link.href} 
+                  className="text-3xl font-black uppercase tracking-tighter text-slate-300 flex items-center gap-4"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <span className="text-sky-500">{link.icon}</span>
+                  {link.name}
+                </Link>
+              ) : (
+                <a 
+                  key={link.name} 
+                  href={link.href} 
+                  className="text-3xl font-black uppercase tracking-tighter text-slate-300 flex items-center gap-4"
+                  onClick={(e) => handleNavClick(e, link.href)}
+                >
+                  <span className="text-sky-500">{link.icon}</span>
+                  {link.name}
+                </a>
+              )
             ))}
             <a 
               href="https://play.google.com/store/apps/details?id=turbo.mx.anuncios"

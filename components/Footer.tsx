@@ -1,32 +1,43 @@
 import React from 'react';
-import { Youtube, MessageCircle, Play, ArrowUp, Mail, Shield, ShieldCheck } from 'lucide-react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Youtube, MessageCircle, ArrowUp, Mail, ShieldCheck } from 'lucide-react';
 
 const Footer: React.FC = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
   const scrollToTop = (e?: React.MouseEvent) => {
     if (e) e.preventDefault();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
+    if (href.startsWith('#')) {
+      if (location.pathname !== '/') {
+        e.preventDefault();
+        navigate('/' + href);
+        return;
+      }
 
-    if (href === '#') {
-      scrollToTop();
-      return;
-    }
+      e.preventDefault();
+      if (href === '#') {
+        scrollToTop();
+        return;
+      }
 
-    const targetId = href.replace('#', '');
-    const element = document.getElementById(targetId);
-    
-    if (element) {
-      const headerOffset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      const targetId = href.replace('#', '');
+      const element = document.getElementById(targetId);
+      
+      if (element) {
+        const headerOffset = 80;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
     }
   };
 
@@ -64,10 +75,10 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="font-black text-xs uppercase tracking-[0.2em] text-slate-500 mb-8">Ecosistema Legal</h4>
             <ul className="space-y-4 text-slate-400 font-bold">
-              <li><a href="#privacy" onClick={(e) => handleNavClick(e, '#privacy')} className="hover:text-white transition-colors">Aviso de Privacidad</a></li>
-              <li><a href="#terms" onClick={(e) => handleNavClick(e, '#terms')} className="hover:text-white transition-colors">Términos Legales</a></li>
-              <li><a href="#blog" onClick={(e) => handleNavClick(e, '#blog')} className="hover:text-white transition-colors">Blog Técnico</a></li>
-              <li><a href="#technology" onClick={(e) => handleNavClick(e, '#technology')} className="hover:text-white transition-colors">Documentación Técnica</a></li>
+              <li><Link to="/privacidad" className="hover:text-white transition-colors">Aviso de Privacidad</Link></li>
+              <li><Link to="/terminos" className="hover:text-white transition-colors">Términos Legales</Link></li>
+              <li><Link to="/blog" className="hover:text-white transition-colors">Blog Técnico</Link></li>
+              <li><Link to="/recursos" className="hover:text-white transition-colors">Documentación Técnica</Link></li>
               <li><a href="#faq" onClick={(e) => handleNavClick(e, '#faq')} className="hover:text-white transition-colors">Base de Conocimiento</a></li>
             </ul>
           </div>

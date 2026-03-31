@@ -1,5 +1,5 @@
 import React from 'react';
-import { BookOpen, Clock, ChevronRight, Share2, MessageSquare, Shield, Terminal, Cpu } from 'lucide-react';
+import { BookOpen, Clock, ChevronRight, Share2, MessageSquare, Shield, Terminal, Cpu, Network, ShieldAlert, Globe } from 'lucide-react';
 
 const articles = [
   {
@@ -31,6 +31,36 @@ const articles = [
     date: "15 Feb, 2025",
     icon: <Terminal className="text-emerald-400" size={20} />,
     content: "La política de 'No-Logs' es a menudo una promesa de marketing, pero en TurboMX la convertimos en una imposibilidad técnica. Mediante el uso de sistemas operativos personalizados que cargan el kernel directamente en la memoria volátil (RAM), eliminamos cualquier posibilidad de persistencia de datos. Si un servidor es desconectado o reiniciado, toda la información de la sesión desaparece instantáneamente sin dejar rastro forense..."
+  },
+  {
+    id: 4,
+    title: "Protocolos de Ofuscación: Evadiendo la Inspección Profunda de Paquetes (DPI)",
+    excerpt: "Técnicas avanzadas para hacer que el tráfico VPN parezca navegación web estándar (HTTPS) y evitar bloqueos regionales.",
+    category: "Seguridad",
+    readTime: "14 min",
+    date: "10 Mar, 2025",
+    icon: <Network className="text-sky-400" size={20} />,
+    content: "La Inspección Profunda de Paquetes (DPI) permite a los ISPs identificar y bloquear tráfico VPN mediante el análisis de firmas de protocolo. En TurboMX, implementamos técnicas de ofuscación como TLS-in-TLS y WebSocket tunneling. Al envolver el tráfico cifrado dentro de una sesión TLS estándar que imita el comportamiento de un navegador, logramos que la red sea indistinguible del tráfico web legítimo, garantizando el acceso a la información sin censura."
+  },
+  {
+    id: 5,
+    title: "Seguridad en Redes Wi-Fi Públicas: El Peligro de los Ataques 'Man-in-the-Middle'",
+    excerpt: "Guía técnica sobre cómo los atacantes interceptan datos en aeropuertos y cafeterías, y cómo un túnel cifrado neutraliza la amenaza.",
+    category: "Educación",
+    readTime: "8 min",
+    date: "05 Mar, 2025",
+    icon: <ShieldAlert className="text-red-400" size={20} />,
+    content: "Conectarse a un Wi-Fi público sin protección es equivalente a gritar tus contraseñas en una habitación llena de gente. Los ataques de 'Evil Twin' y el secuestro de sesiones son triviales de ejecutar en redes abiertas. Este artículo detalla el proceso de cifrado de extremo a extremo que TurboMX aplica desde el dispositivo del usuario hasta nuestros servidores seguros, creando un escudo impenetrable contra cualquier intento de interceptación local."
+  },
+  {
+    id: 6,
+    title: "El Futuro del Protocolo IPv6 y su Impacto en la Privacidad Global",
+    excerpt: "Análisis de cómo la transición a IPv6 cambia el panorama del rastreo digital y las nuevas medidas de protección necesarias.",
+    category: "Tecnología",
+    readTime: "11 min",
+    date: "01 Mar, 2025",
+    icon: <Globe className="text-indigo-500" size={20} />,
+    content: "IPv6 ofrece un espacio de direcciones casi infinito, pero también introduce nuevos desafíos para el anonimato. A diferencia de IPv4, donde el NAT oculta múltiples dispositivos tras una sola IP, IPv6 puede asignar una dirección única y persistente a cada gadget. En TurboMX, hemos desarrollado mecanismos de rotación dinámica de prefijos IPv6 para asegurar que la huella digital de nuestros usuarios permanezca fragmentada y difícil de rastrear por redes publicitarias."
   }
 ];
 
